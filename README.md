@@ -53,15 +53,15 @@ Frontend Display: Users see their NFT, rewards, and leaderboard.
 
 📈 Demo
 
-Live Demo: https://actify.vercel.app
+Live Demo: [https://actify.vercel.app](https://human-step-mint.vercel.app/)
 
-Video Demo: YouTube Link
+Video Demo: YouTube Link : https://youtu.be/nm-JEdRwyHE
 
 ⚡ Getting Started
 
 Clone the repo:
 
-git clone https://github.com/username/actify.git
+git clone [https://github.com/username/actify.git](https://github.com/blambuer10/human-step-mint)
 cd actify
 
 
