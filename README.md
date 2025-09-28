@@ -1,72 +1,113 @@
-# Welcome
+About
 
-## Project info
+Actify is a Proof-of-Human-Activity (PoHA) protocol built on IoTeX. It connects wearables, smartphones, and IoT sensors to the blockchain via W3bstream, validating user activity and minting NFTs and token rewards. Sensitive activity data is secured through confidential computing, ensuring privacy while proving authenticity on-chain.
+
+🌟 Features
+
+Activity Verification: Validate real-world steps, workouts, and movements.
+
+Reward System: Mint Proof-of-Activity NFTs and distribute token rewards.
+
+Privacy-First: Only cryptographic proofs are sent on-chain; raw data stays confidential.
+
+Seamless UX: Connect via IoPay or MetaMask for instant rewards.
+
+DePIN Ready: Leveraging IoTeX for decentralized physical infrastructure.
+
+🛠 Technologies Used
+
+Blockchain: IoTeX
+
+Smart Contracts: Solidity (ActivityNFT, RewardToken)
+
+Development Tools: Hardhat, ethers.js
+
+Frontend: React, Next.js
+
+Wallet Integration: IoPay, MetaMask
+
+Confidential Computing: Rust modules
+
+Device Data Streaming: W3bstream
+
+📦 Project Structure
+actify/
+├── contracts/          # Smart contracts (ActivityNFT.sol, RewardToken.sol)
+├── hardhat/            # Hardhat config & deploy scripts
+├── backend/            # Validator & API server (Node.js)
+├── frontend/           # React frontend app
+├── assets/             # Logo, UI images
+└── README.md
+
+💻 How it Works
+
+User Activity: User performs activity via wearable or phone.
+
+Data Validation: Backend validates activity using W3bstream + simple AI rules.
+
+NFT Minting: Verified activity triggers mintActivity on-chain.
+
+Reward Distribution: Tokens are sent to the user automatically.
+
+Frontend Display: Users see their NFT, rewards, and leaderboard.
+
+📈 Demo
+
+Live Demo: https://actify.vercel.app
+
+Video Demo: YouTube Link
+
+⚡ Getting Started
+
+Clone the repo:
+
+git clone https://github.com/username/actify.git
+cd actify
 
 
+Install dependencies:
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
+cd hardhat && npm install
+cd ../backend && npm install
+cd ../frontend && npm install
 
 
-Changes made via Lovable will be committed automatically to this repo.
+Set .env files for:
 
-**Use your preferred IDE**
+PRIVATE_KEY → Wallet owner for deploying contracts
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+IOTEX_TESTNET_RPC → https://babel-api.testnet.iotex.io
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+ACTIVITY_NFT_ADDRESS → Deployed ActivityNFT contract
 
-Follow these steps:
+Deploy contracts:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+cd hardhat
+npx hardhat compile
+npx hardhat run scripts/deploy.js --network iotex_testnet
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+Run backend server:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+cd backend
+npm start
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Run frontend app:
 
-**Use GitHub Codespaces**
+cd frontend
+npm start
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+📚 Future Plans
 
-## What technologies are used for this project?
+Integrate Fitbit, Apple Health, Google Fit for live activity tracking
 
-This project is built with:
+Build AI-based anti-cheat system
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Launch community challenges and corporate wellness incentives
 
-## How can I deploy this project?
+DAO governance for reward distribution and feature voting
 
-Simply open [Lovable](https://lovable.dev/projects/4e0ea8f5-b530-4bd9-bad3-baae17f2daac) and click on Share -> Publish.
+📝 License
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+MIT License – see LICENSE
