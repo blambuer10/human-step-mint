@@ -18,7 +18,7 @@ const Index = () => {
           <div className="space-y-6">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                PoHA
+                Aktify
               </h1>
               <h2 className="text-xl md:text-2xl font-semibold text-foreground">
                 Proof of Human Activity
@@ -97,7 +97,7 @@ const Index = () => {
           <div className="space-y-4">
             <div className="flex justify-center items-center gap-2">
               <Activity className="w-5 h-5 text-primary" />
-              <span className="font-semibold">PoHA - WaveHack 2024</span>
+              <span className="font-semibold">Aktify</span>
             </div>
             <p className="text-muted-foreground text-sm">
               Built on IoTeX blockchain with W3bstream confidential computing
