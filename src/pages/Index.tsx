@@ -5,6 +5,7 @@ import WalletConnect from "@/components/WalletConnect";
 import ActivityUploader from "@/components/ActivityUploader";
 import StatsOverview from "@/components/StatsOverview";
 import ActivityHistory from "@/components/ActivityHistory";
+import DeployContracts from "@/components/DeployContracts";
 import { Activity, Shield, Zap, Trophy } from "lucide-react";
 
 const Index = () => {
@@ -58,6 +59,9 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl space-y-8">
           {/* Wallet Connection */}
           <WalletConnect onConnected={setWalletData} />
+          
+          {/* Deploy Contracts */}
+          {walletData && <DeployContracts />}
           
           {/* Stats Overview */}
           <StatsOverview account={walletData?.account || null} />
