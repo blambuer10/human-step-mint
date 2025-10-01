@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BrowserProvider } from "ethers";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -74,22 +75,22 @@ export default function WalletConnect({ onConnected }: WalletConnectProps) {
       if (accounts.length > 0) {
         setAccount(accounts[0]);
         
-        // Create a basic provider object for demo
-        const mockProvider = {
-          getNetwork: async () => ({ chainId: 4690 }),
-          getSigner: () => ({ getAddress: async () => accounts[0] })
-        };
+        // Create ethers.js provider for real IoTeX network interaction
+        const provider = new BrowserProvider(window.ethereum);
         
-        const isCorrectNetwork = await checkNetwork(mockProvider);
+        const isCorrectNetwork = await checkNetwork(provider);
         
         if (!isCorrectNetwork) {
           const networkAdded = await addIoTeXNetwork();
           if (networkAdded) {
-            await checkNetwork(mockProvider);
+            // Re-create provider after network switch
+            const newProvider = new BrowserProvider(window.ethereum);
+            await checkNetwork(newProvider);
+            onConnected({ account: accounts[0], provider: newProvider });
           }
+        } else {
+          onConnected({ account: accounts[0], provider });
         }
-        
-        onConnected({ account: accounts[0], provider: mockProvider });
         
         toast({
           title: "Wallet Connected",
@@ -188,7 +189,7 @@ export default function WalletConnect({ onConnected }: WalletConnectProps) {
             {isConnecting ? "Connecting..." : "Connect MetaMask"}
           </Button>
           <p className="text-xs text-muted-foreground">
-            Make sure to switch to IoTeX Testnet
+            Supports IoTeX Mainnet and Testnet
           </p>
         </div>
       </CardContent>

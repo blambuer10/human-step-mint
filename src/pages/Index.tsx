@@ -18,7 +18,7 @@ const Index = () => {
           <div className="space-y-6">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                Aktify
+                Actify
               </h1>
               <h2 className="text-xl md:text-2xl font-semibold text-foreground">
                 Proof of Human Activity
@@ -97,18 +97,11 @@ const Index = () => {
           <div className="space-y-4">
             <div className="flex justify-center items-center gap-2">
               <Activity className="w-5 h-5 text-primary" />
-              <span className="font-semibold">Aktify</span>
+              <span className="font-semibold">Actify</span>
             </div>
             <p className="text-muted-foreground text-sm">
               Built on IoTeX blockchain with W3bstream confidential computing
             </p>
-            <div className="flex justify-center gap-4 text-xs text-muted-foreground">
-              <span>Hackathon Prototype</span>
-              <span>•</span>
-              <span>Testnet Only</span>
-              <span>•</span>
-              <span>Mock Data</span>
-            </div>
           </div>
         </div>
       </footer>
